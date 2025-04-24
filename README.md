@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
 # now you have to give me the whole readd me file for this implementation of tailwindcss in python flask from start to this end of tailwind.config.js
 
 Here is a comprehensive **README.md** for integrating Tailwind CSS with Python Flask, covering everything from project setup to the `tailwind.config.js` configuration. This guide is based on up-to-date best practices and the latest recommendations from the sources you provided[^2][^5][^1].
