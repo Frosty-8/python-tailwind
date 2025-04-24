@@ -95,6 +95,15 @@
           Send Message
         </button>
       </div>
+
+      <div class="fade-slide-in delay-600">
+        <a
+        href="{{ url_for('dashboard') }}" {# This is the Flask way to link to your dashboard route #}
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-md transition block text-center" {# Added 'block' and 'text-center' #}
+        >
+          Go to Dashboard {# Or whatever text you want on the link #}
+        </a>
+       </div>
     </form>
   </div>
 </body>

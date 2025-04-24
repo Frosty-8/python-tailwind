@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cool Flask Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}" />
+  <style>
+    /* Optional: Custom scrollbar style */
+    /* Target Webkit browsers (Chrome, Safari) */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #e0e0e0; /* Light gray track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #9e9e9e; /* Medium gray thumb */
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #757575; /* Darker gray on hover */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased text-gray-800">
+
+  <div id="app" class="flex h-screen">
+
+    <aside class="w-64 bg-gray-900 text-gray-300 flex-shrink-0 overflow-y-auto shadow-lg">
+      <div class="p-6 border-b border-gray-700">
+        <h1 class="text-2xl font-bold text-blue-400">App Dashboard</h1>
+      </div>
+      <nav class="mt-8 space-y-2">
+        <a href="#" class="flex items-center py-2 px-6 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200 rounded-md mx-3">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-2 2v5a1 1 0 01-1 1H9m2z"></path></svg>
+          Overview
+        </a>
+        <a href="#" class="flex items-center py-2 px-6 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200 rounded-md mx-3">
+           <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M12 20.646A4 4 0 110 15.354m0 0l6-6m6 6l6-6m-9 6a9 9 0 01-9 9V3"></path></svg>
+          Users
+        </a>
+        <a href="#" class="flex items-center py-2 px-6 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200 rounded-md mx-3">
+          <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
+          Products
+        </a>
+        <a href="#" class="flex items-center py-2 px-6 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200 rounded-md mx-3">
+           <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          Reports
+        </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-hidden">
+      <header class="flex justify-between items-center px-6 py-4 bg-white border-b border-gray-200 shadow-sm">
+        <h2 class="text-2xl font-semibold text-gray-800">Overview</h2>
+        <div class="relative">
+            <button class="flex items-center text-sm text-gray-700 hover:text-gray-900 focus:outline-none">
+                <img class="h-8 w-8 rounded-full mr-2 object-cover" src="https://via.placeholder.com/150/4F46E5/FFFFFF?text=U" alt="User Avatar">
+                <span class="hidden md:block">User Name</span>
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            </div>
+      </header>
+
+      <div class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6 md:p-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+            <h3 class="text-base font-medium text-gray-600 mb-2">Total Users</h3>
+            <p class="text-3xl font-bold text-blue-600">1,234</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+            <h3 class="text-base font-medium text-gray-600 mb-2">Total Orders</h3>
+            <p class="text-3xl font-bold text-green-600">567</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+            <h3 class="text-base font-medium text-gray-600 mb-2">Revenue</h3>
+            <p class="text-3xl font-bold text-purple-600">$12,345</p>
+          </div>
+           <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+            <h3 class="text-base font-medium text-gray-600 mb-2">Pending Tasks</h3>
+            <p class="text-3xl font-bold text-yellow-600">42</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+          <h3 class="text-lg font-semibold text-gray-800 px-6 py-4 bg-gray-50 border-b border-gray-200">Recent Activity</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Activity</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                   <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Logged in</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">John Doe</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 hour ago</td>
+                   <td class="px-6 py-4 whitespace-nowrap text-sm">
+                       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                          Success
+                       </span>
+                   </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Created product "Example"</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Jane Smith</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 hours ago</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                          New
+                       </span>
+                   </td>
+                </tr>
+                 <tr>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Updated user profile</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Peter Jones</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 hours ago</td>
+                   <td class="px-6 py-4 whitespace-nowrap text-sm">
+                       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                          Pending
+                       </span>
+                   </td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+
+        </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
